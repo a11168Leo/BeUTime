@@ -1,0 +1,63 @@
+BeUTime/
+│
+├── public/                  # Arquivos públicos acessíveis pelo navegador
+│   ├── css/
+│   │   └── global.css       # Estilos globais: cores, fontes, layout geral
+│   ├── js/
+│   │   └── global.js        # Scripts globais: menu, validação simples, navegação
+│   └── images/
+│       ├── logo-beutime.png       # Logo principal do BeUTime
+│       └── banners/
+│           ├── sobrancelhaExpress-banner.png  # Banner do salão
+│           └── independente-banner.png       # Banner do profissional independente
+│
+├── src/
+│   ├── frontend/
+│   │   ├── components/       # Componentes reutilizáveis
+│   │   │   ├── Header.html   # Cabeçalho com menu
+│   │   │   ├── Footer.html   # Rodapé
+│   │   │   └── ServicoCard.html  # Card de serviço/profissional
+│   │   │
+│   │   ├── pages/            # Páginas do site
+│   │   │   ├── Home.html     # Página inicial: lista salões + profissionais independentes
+│   │   │   ├── Login.html    # Página de login (clientes/profissionais)
+│   │   │   └── Salaos/       # Pastas específicas para cada salão ou profissional
+│   │   │       ├── sobrancelhaExpress/
+│   │   │       │   ├── index.html       # Página inicial do salão: lista profissionais/serviços
+│   │   │       │   ├── agendamento.html # Formulário para criar agendamento
+│   │   │       │   └── style.css        # CSS exclusivo do salão (cores, banners, layout)
+│   │   │       └── profissionalIndependente/
+│   │   │           ├── index.html       # Página inicial do profissional independente
+│   │   │           ├── agendamento.html # Formulário para criar agendamento
+│   │   │           └── style.css        # CSS exclusivo do profissional
+│   │   │
+│   │   └── App.js           # Arquivo principal de JS (se SPA) para navegação entre páginas
+│   │
+│   └── backend/
+│       ├── controllers/     # Recebe requisições e interage com modelos
+│       │   ├── clienteController.js       # Cadastro, login, perfil do cliente
+│       │   ├── salaoController.js         # Listar salões, detalhes de salão
+│       │   ├── profissionalController.js # Listar profissionais, filtrar por salão
+│       │   └── agendamentoController.js  # Criar/listar agendamentos
+│       │
+│       ├── models/          # Definição da estrutura de dados e interação com o banco
+│       │   ├── Cliente.js
+│       │   ├── Salao.js
+│       │   ├── Profissional.js
+│       │   └── Agendamento.js
+│       │
+│       ├── routes/          # Define rotas e chama os controllers
+│       │   ├── clienteRoutes.js
+│       │   ├── salaoRoutes.js
+│       │   ├── profissionalRoutes.js
+│       │   └── agendamentoRoutes.js
+│       │
+│       └── server.js        # Arquivo principal do backend: inicializa servidor e conecta DB
+│
+├── database/
+│   └── beutime-schema.sql   # Script SQL: criar tabelas Salao, Profissional, Cliente, Agendamento
+│
+├── package.json             # Dependências e scripts Node.js
+├── .env                     # Variáveis de ambiente (senha DB, chave secreta)
+└── README.md                # Informações do projeto e instruções de uso
+
